@@ -6,6 +6,7 @@ import {
   Flex,
   Wrap,
   WrapItem,
+  useColorMode,
 } from "@chakra-ui/react";
 import Image from "next/image";
 import plusIcon from "../assets/images/plus.png";
@@ -15,11 +16,20 @@ import PlusSvg from "../assets/images/plus.svg";
 import Plus from "../components/Icons/Plus";
 
 export default function Buttons() {
+  const { colorMode, toggleColorMode } = useColorMode();
+
   return (
     <Box p={2}>
       <Heading as="h1" size="3xl" pb={4}>
         Podium Buttons x Chakra UI
       </Heading>
+
+      <Box pb={10}>
+        <Button size="sm" onClick={toggleColorMode}>
+          Toggle Color Mode
+        </Button>
+      </Box>
+
       <HighEmphasisButtons />
       <HighEmphasisButtonsWithIcon />
       <HighEmphasisButtonWithLongText />
