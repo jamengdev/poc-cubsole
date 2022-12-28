@@ -1,6 +1,8 @@
 import { extendTheme } from "@chakra-ui/react";
 import { defineStyle, defineStyleConfig } from "@chakra-ui/styled-system";
 
+// workaround to fix sticky hover state on mobile buttons https://github.com/chakra-ui/chakra-ui/issues/6173
+
 const colors = {
   brand: {
     50: "#E9FAFB",
@@ -32,6 +34,11 @@ const Button = defineStyleConfig({
           bg: "#1C96A3",
         },
       },
+      "@media(hover: none)": {
+        _hover: {
+          bg: "#1C96A3",
+        },
+      },
     },
     ghost: {
       bg: "#A6E0E5",
@@ -44,6 +51,11 @@ const Button = defineStyleConfig({
           bg: "#A6E0E5",
         },
       },
+      "@media(hover: none)": {
+        _hover: {
+          bg: "#A6E0E5",
+        },
+      },
     },
     outline: {
       bg: "#FFFFFF",
@@ -53,6 +65,11 @@ const Button = defineStyleConfig({
       _hover: {
         bgGradient: "linear(to-r, #DEF6FC, #7BD2DB)",
         bg: "#FFFFFF",
+      },
+      "@media(hover: none)": {
+        _hover: {
+          bg: "#FFFFFF",
+        },
       },
     },
   },
