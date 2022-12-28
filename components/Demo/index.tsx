@@ -14,7 +14,7 @@ export default function Demo() {
   );
 }
 
-const Box = (props) => {
+const Box = (props: any) => {
   // This reference gives us direct access to the THREE.Mesh object
   const ref = useRef();
   // Hold state for hovered and clicked events
